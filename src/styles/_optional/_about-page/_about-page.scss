@@ -1,0 +1,359 @@
+.about-page {
+    &__banner {
+        @extend %centring;
+        background: url(./../../../assets/images/about-banner.png) center/cover no-repeat;
+        padding: 185px 0;
+
+        h2 {
+            @extend %main-title-style;
+            text-align: center;
+        }
+    }
+
+    &__main {
+        margin: 175px 0 200px;
+
+        &__wrapper {
+            @extend %centring;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        &__image {
+            @extend %centring;
+            background: url(./../../../assets/images/about-salad.png) no-repeat center/contain;
+            height: 570px;
+            width: 50%;
+        }
+
+        &__content {
+            width: 50%;
+
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+                line-height: 1;
+            }
+
+            p {
+                @extend %block-paragraph-style;
+                margin: 25px 0 50px;
+                line-height: 165.4%;
+            }
+
+            ul {
+                @extend %centring;
+                @extend %block-title-style;
+                font-size: 1.5625em;
+                font-weight: 500;
+                justify-content: space-between;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    &:first-child {
+                        &::before {
+                            content: url(./../../../assets/icons/tractor.svg);
+                        }
+                    }
+
+                    &:last-child {
+                        &::before {
+                            content: url(./../../../assets/icons/chemical_plant.svg);
+                        }
+                    }
+                }
+            }
+
+            a {
+                @extend %yellow-button-style;
+                color: var(--clean-white-text);
+                background-color: var(--blue-bg);
+                width: 40%;
+                margin-top: 60px;
+
+                &:hover {
+                    background-color: var(--black-bg);
+                }
+            }
+        }
+    }
+
+    &__choose {
+        background-color: #ECECEC;
+        padding: 190px 0;
+        margin-bottom: 175px;
+
+        &__wrapper {
+            @extend %centring;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        &__content {
+            width: 50%;
+
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+                line-height: 1;
+            }
+
+            p {
+                @extend %block-paragraph-style;
+                margin: 25px 0 30px;
+                line-height: 165.4%;
+            }
+        }
+
+        &__image {
+            background: url(./../../../assets/images/about-choose.png) no-repeat center/contain;
+            border-radius: 30px;
+            width: 50%;
+            padding-bottom: 41%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        ul li {
+            .reason {
+                @extend %block-title-style;
+                font-weight: 500;
+                font-size: 1.25em;
+                padding: 30px;
+                width: 50%;
+                border-radius: 50px;
+                background-color: var(--light-grey-bg);
+                padding-left: 55px;
+                position: relative;
+
+                &::before {
+                    content: url(./../../../assets/icons/reason-icon.svg);
+                    position: absolute;
+                    left: 27px;
+                    top: calc(50% - 9.5px);
+                }
+            }
+
+            p {
+                margin-left: 60px;
+                width: 70%;
+            }
+        }
+
+        &__cards {
+            @extend %centring;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+
+            &__card {
+                margin-top: 90px;
+                width: 22%;
+                padding: 50px 35px 35px;
+                border-radius: 30px;
+                background: var(--clean-white-bg);
+
+                &::before {
+                    @extend %centring;
+                    width: 50%;
+                    background-color: var(--white-bg);
+                    padding: 25px;
+                    margin: 0 auto;
+                    border-radius: 18px;
+                }
+
+                &:nth-child(1)::before {
+                    content: url(./../../../assets/icons/return_purchase.svg);
+                }
+
+                &:nth-child(2)::before {
+                    content: url(./../../../assets/icons/natural_food.svg);
+                }
+
+                &:nth-child(3)::before {
+                    content: url(./../../../assets/icons/phone_time.svg);
+                }
+
+                &:nth-child(4)::before {
+                    content: url(./../../../assets/icons/card_security.svg);
+                }
+
+                h2 {
+                    @extend %block-title-style;
+                    font-size: 1.5625em;
+                    margin: 30px 0 10px;
+                }
+
+                p {
+                    @extend %block-paragraph-style;
+                    line-height: 165.4%;
+                    margin: 0 auto;
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    &__team {
+        padding: 175px 0 200px;
+
+        &__wrapper {
+            @extend %centring;
+            flex-direction: column;
+            text-align: center;
+
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+                margin-bottom: 15px;
+            }
+
+            p {
+                @extend %block-paragraph-style;
+                line-height: 165.4%;
+                width: 70%;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__teammates {
+            @extend %centring;
+            gap: 25px;
+            flex-wrap: wrap;
+
+            &__teammate {
+                border-radius: 30px 30px 0px 0px;
+                background-color: var(--white-bg);
+                filter: none;
+                padding-bottom: 25px;
+                cursor: pointer;
+                transition: all .3s;
+
+                &:nth-child(1) .image {
+                    background: url(./../../../assets/images/giovani_bacardo.png) no-repeat center/cover;
+                }
+
+                &:nth-child(2) .image {
+                    background: url(./../../../assets/images/marianne_loreno.png) no-repeat center/cover;
+                }
+
+                &:nth-child(3) .image {
+                    background: url(./../../../assets/images/riga_pelore.png) no-repeat center/cover;
+                }
+
+                .image {
+                    border-radius: 30px 30px 0px 0px;
+                    padding: 200px;
+                }
+
+                h2,
+                h3 {
+                    text-align: left;
+                }
+
+                h2 {
+                    font-size: 1.5625em;
+                    margin: 35px 0 0 30px;
+                }
+
+                h3 {
+                    font-size: 1.375em;
+                }
+
+                .additional-info {
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 {
+                        margin-left: 30px;
+                    }
+
+                    .social-medias {
+                        margin-right: 35px;
+                        display: flex;
+                        gap: 20px;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--clean-white-bg);
+                    filter: drop-shadow(0px 29px 44px rgba(150, 150, 150, 0.25));
+                }
+            }
+        }
+    }
+
+    &__offer {
+        @extend %centring;
+        text-align: center;
+        background-color: var(--blue-bg);
+
+        &__wrapper {
+            padding: 190px 0;
+
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+                color: var(--clean-white-text);
+                margin-bottom: 30px;
+            }
+        }
+
+        &__cards {
+            @extend %centring;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            &__card{
+                &:nth-child(1) .image {
+                    background: url(./../../../assets/images/about_spicy.png) no-repeat center/cover;
+                }
+
+                &:nth-child(2) .image {
+                    background: url(./../../../assets/images/about_nuts_feesd.png) no-repeat center/cover;
+                }
+
+                &:nth-child(3) .image {
+                    background: url(./../../../assets/images/about_fruits.png) no-repeat center/cover;
+                }
+
+                &:nth-child(4) .image {
+                    background: url(./../../../assets/images/about_vegetable.png) no-repeat center/cover;
+                }
+
+                .image{
+                    border-radius: 30px;
+                    padding: 150px;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 1.5625em;
+                    font-weight: 500;
+                    color: var(--clean-white-text);
+                }
+            }
+
+        }
+    }
+}

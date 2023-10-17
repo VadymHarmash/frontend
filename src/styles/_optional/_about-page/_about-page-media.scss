@@ -1,0 +1,212 @@
+@media screen and (max-width: 991.98px) {
+    .about-page {
+        &__banner {
+            padding: 100px 0;
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        &__main {
+            text-align: center;
+
+            &__image {
+                display: none;
+            }
+
+            &__content {
+                width: 100%;
+
+                h3 {
+                    font-size: 1.75em;
+                }
+
+                h2 {
+                    font-size: 2em;
+                }
+
+                p {
+                    font-size: 0.875em;
+                }
+
+                ul {
+                    font-size: 1em;
+                    flex-direction: column;
+                }
+
+                a {
+                    margin: 30px auto 0;
+                    width: 50%;
+                }
+            }
+        }
+
+        &__choose {
+            padding: 100px 0;
+            text-align: center;
+
+            &__content {
+                width: 100%;
+
+                h3 {
+                    font-size: 1.75em;
+                }
+
+                h2 {
+                    font-size: 2em;
+                }
+
+                p {
+                    font-size: 0.875em;
+                }
+            }
+
+            &__image {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .reason,
+                    p {
+                        margin: 0 auto;
+                    }
+
+                    .reason {
+                        font-size: 1em;
+                        padding: 15px;
+                    }
+                }
+            }
+
+            &__cards__card {
+                width: 45%;
+                margin-top: 50px;
+
+                h2 {
+                    font-size: 1em;
+                }
+
+                p {
+                    font-size: 0.875em;
+                }
+            }
+        }
+
+        &__team {
+            h3 {
+                font-size: 1.75em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 0.875em;
+            }
+
+            &__teammates {
+                &__teammate {
+                    padding-bottom: 25px;
+
+                    .image {
+                        padding: 100px;
+                    }
+
+                    h2 {
+                        font-size: 1em;
+                        margin: 30px 0 0 30px;
+                    }
+
+                    h3 {
+                        font-size: 0.875em;
+                    }
+
+                    .additional-info {
+                        margin-top: 15px;
+
+                        .social-medias {
+                            margin-right: 20px;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__offer {
+            &__wrapper {
+                padding: 140px 0;
+
+                h3 {
+                    font-size: 1.75em;
+                }
+
+                h2 {
+                    font-size: 2em;
+                }
+            }
+
+            &__cards__card {
+                .image {
+                    padding: 100px;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .form {
+            margin-top: 150px;
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .about-page__choose__content ul li .reason::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .about-page {
+        &__banner {
+            padding: 100px 0;
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        &__main {
+            text-align: center;
+
+            &__image {
+                display: none;
+            }
+
+            &__content {
+                a {
+                    width: 80%;
+                }
+            }
+        }
+
+        &__choose__cards__card {
+            width: 80%;
+        }
+    }
+}

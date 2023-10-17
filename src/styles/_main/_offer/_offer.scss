@@ -1,0 +1,56 @@
+.offer{
+    background-color: var(--blue-bg);
+    padding: 200px 0;
+    &__wrapper{
+        h3 {
+            @extend %block-subtitle-style;
+        }
+
+        h2 {
+            @extend %block-title-style;
+            color: var(--clean-white-bg);
+            margin-bottom: 50px;
+        }
+
+    }
+    &__products{
+        @extend %centring;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &__product{
+            width: 24%;
+        }
+
+        .image {
+            @extend %centring;
+            height: 300px;
+            margin-top: 30px;
+    
+            img {
+                mix-blend-mode: multiply;
+            }
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 7px;
+            margin-top: 6px;
+    
+            .actual-price {
+                @extend %block-paragraph-style;
+                font-weight: 700;
+            }
+    
+            .non-actual-price {
+                text-decoration: line-through;
+                color: var(--non-actual-price);
+                font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 0.83em;
+                font-weight: 600;
+            }
+        }
+    }
+}

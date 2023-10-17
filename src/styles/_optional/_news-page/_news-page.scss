@@ -1,0 +1,18 @@
+.news-page {
+    &__banner{
+        @extend %centring;
+        background: url(./../../../assets/images/news-banner-background.png) center/cover no-repeat;
+        padding: 185px 0;
+        margin-bottom: 175px;
+        h2{
+            @extend %main-title-style;
+            text-align: center;
+        }
+    }
+
+    .news{
+        h3, &__title {
+            display: none;
+        }
+    }
+}

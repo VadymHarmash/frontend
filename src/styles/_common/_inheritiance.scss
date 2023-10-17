@@ -1,0 +1,65 @@
+%main-title-style {
+    color: var(--blue-text);
+    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4.375em;
+    font-weight: 700;
+}
+
+%block-title-style {
+    color: var(--blue-text);
+    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3.125em;
+    font-weight: 900;
+}
+
+%block-subtitle-style {
+    color: var(--green-text);
+    font-family: 'Yellowtail', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.25em;
+}
+
+%block-paragraph-style {
+    color: var(--dark-grey-text);
+    font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.125em;
+}
+
+%centring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%yellow-button-style {
+    @extend %centring;
+    color: var(--blue-text);
+    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 28px 39px;
+    border-radius: 16px;
+    background-color: var(--yellow-bg);
+    gap: 10px;
+    transition: all .3s;
+
+    &::after {
+        content: url('./../../assets/icons/arrow-right.svg');
+        @extend %centring;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--dirty-blue-bg);
+        padding-bottom: 5px;
+        transition: all .3s;
+    }
+
+    &:hover {
+        color: var(--white-text);
+        background-color: var(--blue-bg);
+
+        &::after {
+            background-color: var(--blue-bg);
+        }
+    }
+}

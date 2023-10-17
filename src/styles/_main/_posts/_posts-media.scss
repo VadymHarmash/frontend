@@ -1,0 +1,31 @@
+@media screen and (max-width: 991.98px) {
+    .posts {
+        margin: 95px 0 140px;
+    
+        &__wrapper {
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        &__post {
+            padding: 110px 0 110px 55px;
+
+            h3 {
+                font-size: 1.75em;
+            }
+    
+            h2 {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .posts {
+    
+        &__post {
+            transform: scale(.9);
+        }
+    }
+}

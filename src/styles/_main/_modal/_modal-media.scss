@@ -1,0 +1,86 @@
+@media screen and (max-width: 1250.01px) {
+    .modal__content__quantity button {
+        padding: 28px 20px;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .modal {
+        &__content {
+            background-color: var(--clean-white-bg);
+            padding: 60px 50px;
+
+            .name {
+                font-size: 1.5em;
+            }
+
+            &__footer {
+                display: none;
+            }
+
+            .image {
+                display: none;
+            }
+
+            &__info {
+                width: 100%;
+                text-align: center;
+
+                p {
+                    margin: 10px 0 15px;
+                }
+            }
+
+            .price {
+                margin: 0 auto;
+            }
+
+            &__quantity {
+                justify-content: center;
+                align-self: center;
+
+                input {
+                    padding: 20px 0;
+                }
+
+                button {
+                    padding: 20px 30px;
+                }
+            }
+
+            &__text {
+                @extend %block-paragraph-style;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .modal {
+        &__content {
+            &__name {
+                font-size: 0.875em;
+            }
+
+            &__info {
+
+                p {
+                    font-size: 0.875em;
+                }
+            }
+
+            &__quantity {
+                flex-direction: column;
+
+                span {
+                    font-size: 0.875em;
+                }
+
+                input {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}

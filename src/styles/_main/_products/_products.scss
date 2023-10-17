@@ -1,0 +1,111 @@
+.products {
+    margin: 175px 0 200px;
+
+    &__wrapper {
+        @extend %centring;
+        flex-direction: column;
+
+        h3 {
+            @extend %block-subtitle-style;
+        }
+
+        h2 {
+            @extend %block-title-style;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 40px 0 120px;
+
+        &__card {
+            width: 24%;
+            padding: 30px 25px 20px 30px;
+            border-radius: 30px;
+            background-color: var(--white-bg);
+            cursor: pointer;
+
+            .category {
+                color: var(--clean-white-text);
+                font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 0.83em;
+                font-weight: 600;
+                background-color: var(--blue-bg);
+                text-align: center;
+                padding: 5px 12px;
+                border-radius: 8px;
+            }
+
+            .name {
+                color: var(--blue-text);
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 600;
+                margin: 20px 0 13px;
+            }
+            
+            &__name{
+                font-size: 1.25em;
+            }
+
+            &__rates {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: #DEDDDD;
+                    position: absolute;
+                    top: 0;
+                }
+
+                .stars {
+                    transform: scale(.7);
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    &__button {
+        @extend %yellow-button-style;
+        color: var(--clean-white-text);
+        background-color: var(--black-bg);
+        cursor: pointer;
+    }
+
+    .price {
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+        margin-top: 6px;
+
+        .actual-price {
+            @extend %block-paragraph-style;
+            font-weight: 700;
+        }
+
+        .non-actual-price {
+            text-decoration: line-through;
+            color: var(--non-actual-price);
+            font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            font-size: 0.83em;
+            font-weight: 600;
+        }
+    }
+
+    .image {
+        @extend %centring;
+        height: 300px;
+        margin-top: 30px;
+
+        img {
+            mix-blend-mode: multiply;
+        }
+    }
+}

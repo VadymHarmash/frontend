@@ -1,0 +1,230 @@
+.cart {
+    .cart-banner {
+        @extend %centring;
+        padding: 185px;
+        background: url(./../../assets/images/cart-background.png) center/cover no-repeat;
+        margin-bottom: 140px;
+
+        h2 {
+            @extend %main-title-style;
+        }
+    }
+
+    .order-list {
+        background-color: var(--ohra-bg);
+        padding: 200px 0;
+        margin-bottom: 150px;
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &__product {
+            @extend %centring;
+            justify-content: space-between;
+
+            &__info,
+            &__quantity {
+                @extend %centring;
+            }
+
+            &__info {
+                width: 60%;
+                justify-content: space-between;
+
+                .image {
+                    @extend %centring;
+                    height: 300px;
+                    margin-top: 30px;
+                    width: 40%;
+
+                    img {
+                        width: 100%;
+                        mix-blend-mode: multiply;
+                    }
+                }
+
+                p {
+                    @extend %block-paragraph-style;
+                    font-size: 2.5em;
+                    color: var(--blue-text);
+                    font-weight: 700;
+                    width: 30%;
+                }
+
+                .price {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 7px;
+
+                    .actual-price {
+                        @extend %block-paragraph-style;
+                        font-size: 2.5em;
+                        color: var(--blue-text);
+                        font-weight: 700;
+                    }
+
+                    .non-actual-price {
+                        text-decoration: line-through;
+                        color: var(--non-actual-price);
+                        font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                        font-size: 1.5em;
+                        font-weight: 600;
+                        margin: 0 10px;
+                    }
+                }
+            }
+
+            &__delete-button {
+                @extend %centring;
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1.25em;
+                font-weight: 700;
+                padding: 20px 30px;
+                border-radius: 16px;
+                background-color: var(--blue-bg);
+                color: var(--clean-white-text);
+                cursor: pointer;
+                transition: all .3s;
+
+                &:hover {
+                    color: var(--clean-white-text);
+                    background-color: var(--black-bg);
+                }
+            }
+
+            &__quantity {
+                span {
+                    @extend %block-paragraph-style;
+                    font-size: 2em;
+                    color: var(--blue-text);
+                    font-weight: 700;
+                }
+
+                input {
+                    width: 25%;
+                    text-align: center;
+                    padding: 28px;
+                    border-radius: 16px;
+                    border: 2px solid var(--blue-bg);
+                    background-color: var(--clean-white-bg);
+                    margin-left: 20px;
+                    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 1.25em;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &__total-price {
+            @extend %block-paragraph-style;
+            font-size: 2.5em;
+            color: var(--blue-text);
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            margin: 90px 0;
+
+            p {
+                display: flex;
+                justify-content: space-between;
+                width: 22%;
+            }
+
+        }
+
+        &__to-order {
+            @extend %yellow-button-style;
+            margin: 0 auto;
+            width: 20%;
+            background-color: var(--blue-bg);
+            color: var(--clean-white-text);
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                color: var(--clean-white-text);
+                background-color: var(--black-bg);
+            }
+        }
+
+        &__form {
+            @extend %centring;
+
+            form {
+                width: 100%;
+                @extend %centring;
+                flex-wrap: wrap;
+                gap: 45px;
+
+                button {
+                    padding: 26px 50px;
+                    border: 2px var(--blue-bg) solid;
+                    border-radius: 16px;
+                    background-color: var(--blue-bg);
+                    color: var(--clean-white-text);
+                    font-size: 1.25em;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all .3s;
+                    margin-top: 55px;
+
+                    &:hover {
+                        background-color: var(--yellow-bg);
+                        border-color: var(--yellow-bg);
+                    }
+                }
+            }
+
+            &__field {
+                @extend %centring;
+                flex-direction: column;
+                width: 45%;
+                gap: 25px;
+
+                label {
+                    @extend %block-title-style;
+                    font-size: 1.125em;
+                    font-weight: 600;
+                    align-self: self-start;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 25px;
+                    color: var(--form-placeholder-text);
+                    font-size: 1.125em;
+                    font-style: italic;
+                    width: 100%;
+                    border: 1px solid var(--green-bg);
+                    border-radius: 16px;
+                }
+
+            }
+
+            .extra {
+                width: calc(90% + 45px);
+            }
+        }
+    }
+
+    .thanks-page {
+        margin: 100px 0 250px;
+
+        h2 {
+            @extend %main-title-style;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        &__image {
+            background: url(./../../assets/images/thanks-background.png) no-repeat center / cover;
+            height: 450px;
+            width: 100%;
+        }
+    }
+}

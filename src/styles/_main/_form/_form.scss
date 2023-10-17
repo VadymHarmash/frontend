@@ -1,0 +1,53 @@
+.form {
+    margin: 185px 0 115px;
+
+    &__wrapper {
+        @extend %centring;
+        justify-content: space-between;
+        background: url(./../../../assets/images/form-background.png) no-repeat center / cover;
+        border-radius: 30px;
+        padding: 105px 70px;
+
+        h2 {
+            @extend %block-title-style;
+            color: var(--clean-white-text);
+            width: 35%;
+        }
+
+        form {
+            display: flex;
+            gap: 5px;
+            width: 45%;
+
+            input {
+                border: none;
+                border-radius: 16px;
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+                &[type="email"] {
+                    padding: 25px;
+                    color: var(--form-placeholder-text);
+                    font-size: 1.125em;
+                    font-style: italic;
+                    width: 100%;
+                }
+
+                &[type="submit"] {
+                    padding: 26px 45px;
+                    border: 2px var(--blue-bg) solid;
+                    background-color: var(--blue-bg);
+                    color: var(--clean-white-text);
+                    font-size: 1.25em;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all .3s;
+
+                    &:hover {
+                        background-color: var(--clean-white-bg);
+                        color: var(--blue-text);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.news {
+    margin-bottom: 170px;
+
+    &__wrapper {
+        h3 {
+            @extend %block-subtitle-style;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__title {
+        @extend %centring;
+        justify-content: space-between;
+        margin-bottom: 45px;
+
+        h2 {
+            @extend %block-title-style;
+            width: 65%;
+            line-height: 114.5%;
+        }
+
+        &__more {
+            @extend %yellow-button-style;
+            background-color: var(--clean-white-bg);
+            border: 2px var(--blue-bg) solid;
+        }
+    }
+
+    &__posts {
+        @extend %centring;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 200px;
+
+        &__post {
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 48%;
+            height: 530px;
+            border-radius: 25px;
+            position: relative;
+
+            &::before {
+                content: '25 Nov';
+                @extend %centring;
+                @extend %block-title-style;
+                font-size: 1.5625em;
+                text-align: center;
+                background-color: var(--clean-white-bg);
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                position: absolute;
+                left: 60px;
+                top: 60px;
+            }
+
+            &:nth-child(1) {
+                background-image: url(./../../../assets/images/news-salad.png);
+            }
+
+            &:nth-child(2) {
+                background-image: url(./../../../assets/images/news-tomatoes.png);
+            }
+
+            &:nth-child(3) {
+                background-image: url(./../../../assets/images/news-vitamin.png);
+            }
+
+            &:nth-child(4) {
+                background-image: url(./../../../assets/images/news-organic.png);
+            }
+
+            &:nth-child(5) {
+                background-image: url(./../../../assets/images/news-fresh.png);
+            }
+
+            &:nth-child(6) {
+                background-image: url(./../../../assets/images/news-plastic.png);
+            }
+
+            &__content {
+                background-color: var(--clean-white-bg);
+                margin: 260px auto 0;
+                padding: 50px;
+                width: 80%;
+                border-radius: 31px 34px 30px 30px;
+                box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+
+                span {
+                    @extend %block-paragraph-style;
+                    color: var(--blue-text);
+                    position: relative;
+                    padding-left: 25px;
+
+                    &::before {
+                        content: url(./../../../assets/icons/human.svg);
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+
+                h4 {
+                    @extend %block-title-style;
+                    font-size: 1.5625em;
+                    margin-top: 15px;
+                }
+
+                p {
+                    @extend %block-paragraph-style;
+                    line-height: 165.4%;
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    @extend %yellow-button-style;
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

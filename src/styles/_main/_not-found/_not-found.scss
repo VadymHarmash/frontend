@@ -1,0 +1,43 @@
+.not-found {
+    margin-bottom: 130px;
+    background: url(./../../../assets/images/not-found-background.png) center/cover no-repeat;
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-end;
+        padding: 120px 0;
+    }
+
+    &__content {
+        width: 45%;
+    }
+
+    h1 {
+        @extend %main-title-style;
+        color: var(--dark-green-text);
+        font-size: 20em;
+        line-height: 80%;
+    }
+
+    h2 {
+        @extend %main-title-style;
+        line-height: 1;
+    }
+
+    p {
+        @extend %block-paragraph-style;
+        line-height: 165.4%;
+        margin: 20px 0 40px;
+    }
+
+    a {
+        @extend %yellow-button-style;
+        color: var(--clean-white-text);
+        background-color: var(--blue-bg);
+        width: 60%;
+
+        &:hover {
+            background-color: var(--black-bg);
+        }
+    }
+}

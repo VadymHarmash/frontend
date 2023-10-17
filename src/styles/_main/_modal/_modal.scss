@@ -1,0 +1,137 @@
+.modal {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        background-color: var(--clean-white-bg);
+        width: 100%;
+        padding: 65px 50px 105px;
+        cursor: auto;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transform: scale(.9);
+
+        &__header,
+        &__body,
+        &__footer {
+            @extend %centring;
+            justify-content: space-between;
+        }
+
+        &__footer {
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        &__close-button {
+            @extend %centring;
+            color: var(--clean-white-text);
+            font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.25em;
+            font-weight: 700;
+            padding: 20px 30px;
+            border-radius: 16px;
+            background-color: var(--blue-bg);
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                color: var(--clean-white-text);
+                background-color: var(--black-bg);
+            }
+        }
+
+        &__name {
+            font-size: 2.5em;
+        }
+
+        &__image {
+            @extend %centring;
+            justify-content: flex-start;
+            width: 50%;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+
+            p {
+                margin: 30px 0;
+            }
+        }
+
+        &__quantity {
+            @extend %centring;
+            justify-content: flex-start;
+            align-self: self-start;
+            gap: 20px;
+
+            span,
+            input {
+                color: var(--blue-text);
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1.25em;
+                font-weight: 700;
+            }
+
+            input {
+                width: 20%;
+                text-align: center;
+                padding: 28px 0;
+                border-radius: 16px;
+                border: 2px solid var(--blue-bg);
+            }
+
+            button {
+                @extend %yellow-button-style;
+                color: var(--clean-white-text);
+                background-color: var(--black-bg);
+                cursor: pointer;
+            }
+        }
+
+        &__buttons {
+            @extend %centring;
+            gap: 25px;
+            margin-top: 25px;
+
+            button {
+                @extend %centring;
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1.25em;
+                font-weight: 700;
+                padding: 20px 30px;
+                border-radius: 16px;
+                border: 1px solid var(--clean-black-bg);
+                cursor: pointer;
+                transition: all .3s;
+            }
+
+            .active {
+                color: var(--clean-white-text);
+                background-color: var(--blue-bg);
+            }
+
+            .non-active {
+                color: var(--blue-text);
+                background-color: var(--non-active-button-bg);
+            }
+        }
+
+        &__text {
+            @extend %block-paragraph-style;
+            text-align: center;
+        }
+    }
+}

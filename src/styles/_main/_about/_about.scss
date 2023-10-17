@@ -1,0 +1,100 @@
+.about {
+    padding: 90px 0 110px;
+    background-color: var(--white-bg);
+
+    &__wrapper {
+        @extend %centring;
+        gap: 35px;
+    }
+
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        width: 60%;
+
+        h3 {
+            @extend %block-subtitle-style;
+        }
+
+        h2 {
+            @extend %block-title-style;
+            margin: 10px 0;
+            line-height: 110%;
+        }
+
+        p {
+            @extend %block-paragraph-style;
+            line-height: 165.4%;
+        }
+
+        ul {
+            margin: 50px 0;
+            @extend %centring;
+            flex-direction: column;
+            gap: 30px;
+
+            li {
+                position: relative;
+                padding-left: 120px;
+
+                h4 {
+                    @extend %block-title-style;
+                    font-size: 1.5625em;
+                }
+
+                p {
+                    color: var(--dark-grey-text);
+                    line-height: 165.4%;
+                }
+
+                &:first-child::before {
+                    content: url(./../../../assets/icons/salad.svg);
+                }
+
+                &:last-child::before {
+                    content: url(./../../../assets/icons/mailbox.svg);
+                }
+
+                &::before {
+                    @extend %centring;
+                    width: 100px;
+                    background-color: var(--clean-white-bg);
+                    position: absolute;
+                    left: 0;
+                    padding: 20px;
+                    border-radius: 20px;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background-color: #FFF4CD;
+                    opacity: .4;
+                    position: absolute;
+                    left: 20px;
+                    border-radius: 50%;
+                }
+
+                &:first-child::after {
+                    top: 30px;
+                }
+
+                &:last-child::after {
+                    top: 50px;
+                }
+            }
+        }
+
+
+        &__shop-now {
+            @extend %yellow-button-style;
+            width: 40%;
+        }
+    }
+}

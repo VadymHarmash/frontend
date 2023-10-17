@@ -1,0 +1,36 @@
+.ordered-products {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--grey-bg);
+        margin: 100px 0;
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--grey-bg);
+        }
+
+        .ordered-product {
+            margin-bottom: 15px;
+
+            h4,
+            p {
+                margin: 0;
+            }
+        }
+
+        th {
+            background-color: var(--clean-white-bg);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--white-bg);
+        }
+
+        tr:hover {
+            background-color: var(--grey-bg);
+        }
+    }
+}

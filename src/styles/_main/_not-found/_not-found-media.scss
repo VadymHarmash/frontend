@@ -1,0 +1,53 @@
+@media screen and (max-width: 1250.01px) {
+    .not-found__content {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .not-found {
+        background-image: none;
+        background-color: var(--dark-green-bg);
+
+        &__wrapper {
+            justify-content: center;
+            text-align: center;
+        }
+
+        &__content {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 15em;
+        }
+
+        h2 {
+            font-size: 2.75em;
+        }
+
+        p {
+            font-size: 0.875em;
+        }
+
+        a {
+            font-size: 0.875em;
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .not-found {
+        h1 {
+            font-size: 10em;
+        }
+        a {
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.organics {
+    background-color: var(--pale-green-bg);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 200px 0;
+    }
+
+    &__post {
+        @extend %centring;
+        background: no-repeat center / cover;
+        width: 32%;
+        padding: 200px 0;
+
+        &:nth-child(1) {
+            background-image: url(./../../../assets/images/organics-1.jpg);
+        }
+
+        &:nth-child(2) {
+            background-image: url(./../../../assets/images/organics-2.jpg);
+        }
+
+        &:nth-child(3) {
+            background-image: url(./../../../assets/images/organics-3.jpg);
+        }
+
+        a {
+            @extend %block-title-style;
+            border-radius: 20px;
+            padding: 30px 0;
+            width: 50%;
+            text-align: center;
+            background: var(--clean-white-bg);
+            font-size: 1.5625em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .3s;
+            &:hover{
+                color: var(--clean-white-bg);
+                background-color: var(--blue-text);
+            }
+        }
+    }
+}

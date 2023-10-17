@@ -1,0 +1,63 @@
+@media screen and (max-width: 991.98px) {
+    .eco {
+        background-size: 100% 100%;
+    
+        &__wrapper {
+            padding: 100px 0;
+            justify-content: center;
+        }
+    
+        &__content {
+            width: 80%;
+            padding: 80px 90px;
+            margin: 0;
+            text-align: center;
+    
+            h3 {
+                font-size: 1.75em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+    
+            ul{
+                li{
+                    h4 {
+                        font-size: 1em;
+                    }
+        
+                    p {
+                        font-size: 0.875em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .eco {
+        background-size: 100% 100%;
+    
+        &__wrapper {
+            padding: 100px 0;
+            justify-content: center;
+        }
+    
+        &__content {
+            width: 80%;
+            padding: 30px;
+            margin: 0;
+            text-align: center;
+    
+            h3 {
+                font-size: 1.75em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    }
+}

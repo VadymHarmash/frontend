@@ -1,0 +1,109 @@
+.header {
+    margin: 70px 0;
+
+    &__wrapper {
+        @extend %centring;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        @extend %centring;
+        gap: 10px;
+
+        p {
+            color: var(--blue-text);
+            font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            font-size: 2.375em;
+            font-weight: 700;
+        }
+    }
+
+    &__links {
+        .burger-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        &.burger-menu-open {
+            .line:first-child {
+                transform: rotate(-45deg) translate(-5px, 5px);
+            }
+
+            .line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .line:last-child {
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+
+            .line {
+                background-color: var(--clean-black-bg);
+                height: 1px;
+                width: 100%;
+            }
+        }
+
+        &__list {
+            @extend %centring;
+            gap: 30px;
+            margin: 0 130px 0 150px;
+
+            &__link {
+                color: var(--blue-text);
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1.25em;
+                font-weight: 700;
+                text-decoration: none;
+                @extend %centring;
+            }
+
+            .pages::after {
+                content: url('../../assets/icons/arrow-bottom.svg');
+                @extend %centring;
+                margin: 0 0 5px 3px;
+            }
+        }
+    }
+
+    &__buttons {
+        @extend %centring;
+        justify-content: space-between;
+        width: 40%;
+
+        &__button {
+            @extend %centring;
+            gap: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .search {
+            width: 60%;
+            border-radius: 36px;
+            background-color: var(--search-block-background);
+            justify-content: flex-end;
+        }
+
+        .cart-link {
+            text-decoration: none;
+        }
+
+        .cart {
+            border-radius: 33px;
+            border: 1px solid var(--cart-border);
+            padding-right: 20px;
+
+            p {
+                color: var(--blue-text);
+                font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 700;
+                font-size: 1.125em;
+            }
+
+            .active {
+                color: #FF0000;
+            }
+        }
+    }
+}

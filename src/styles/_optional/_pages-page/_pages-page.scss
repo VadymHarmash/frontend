@@ -1,0 +1,128 @@
+.pages-page {
+    &__banner {
+        @extend %centring;
+        background: url(./../../../assets/images/pages-banner.png) center/cover no-repeat;
+        padding: 185px 0;
+
+        h2 {
+            @extend %main-title-style;
+            text-align: center;
+        }
+    }
+
+    &__grow {
+        @extend %centring;
+        text-align: center;
+        padding: 175px 0 200px;
+        background-color: var(--white-bg);
+
+        h3 {
+            @extend %block-subtitle-style;
+        }
+
+        h2 {
+            @extend %block-title-style;
+            line-height: 1;
+            width: 50%;
+            margin: 0 auto 30px;
+        }
+
+        &__content {
+            @extend %centring;
+            gap: 20px;
+
+            &__list {
+                h4 {
+                    color: var(--blue-text);
+                    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 1.5625em;
+                    font-weight: 500;
+                }
+
+                p {
+                    @extend %block-paragraph-style;
+                    margin: 25px 0 50px;
+                    line-height: 165.4%;
+                }
+            }
+
+            &__left-list {
+                text-align: right;
+                li:nth-child(1):before{
+                    content: url(./../../../assets/icons/pages-milk_bottle.svg);
+                }
+                li:nth-child(2):before{
+                    content: url(./../../../assets/icons/pages-online_store.svg);
+                }
+                li:nth-child(3):before{
+                    content: url(./../../../assets/icons/pages-delivery.svg);
+                }
+            }
+
+            &__right-list {
+                text-align: left;
+                li:nth-child(1):before{
+                    content: url(./../../../assets/icons/pages-natural_food.svg);
+                }
+                li:nth-child(2):before{
+                    content: url(./../../../assets/icons/pages-vegetables_bag.svg);
+                }
+                li:nth-child(3):before{
+                    content: url(./../../../assets/icons/pages-radish.svg);
+                }
+            }
+
+            &__image {
+                width: 100%;
+                mix-blend-mode: multiply;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        a {
+            @extend %yellow-button-style;
+            color: var(--clean-white-text);
+            background-color: var(--blue-bg);
+            width: 20%;
+            margin: 20px auto 0;
+            border: 2px var(--blue-bg) solid;
+
+            &:hover {
+                background-color: var(--clean-white-bg);
+                color: var(--blue-text);
+            }
+        }
+    }
+    &__organic{
+        background: url(./../../../assets/images/pages-organic-background.png) center/cover no-repeat;
+        padding: 170px 0 530px;
+        margin-bottom: 140px;
+        &__wrapper{
+            @extend %centring;
+            flex-direction: column;
+            text-align: center;
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+            }
+
+            p {
+                @extend %block-paragraph-style;
+                margin: 25px 0 50px;
+                line-height: 165.4%;
+                width: 60%;
+            }
+
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+}

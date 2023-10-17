@@ -1,0 +1,20 @@
+.shop-page {
+    &__banner {
+        @extend %centring;
+        background: url(./../../../assets/images/cart-background.png) center/cover no-repeat;
+        padding: 185px 0;
+
+        h2 {
+            @extend %main-title-style;
+            text-align: center;
+        }
+    }
+
+    &__wrapper .title, h3 {
+        display: none;
+    }
+
+    .form{
+        margin-top: 150px;
+    }
+}

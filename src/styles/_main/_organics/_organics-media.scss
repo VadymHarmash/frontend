@@ -1,0 +1,32 @@
+@media screen and (max-width: 991.98px) {
+    .organics {
+        &__wrapper {
+            padding: 200px 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__post {
+            width: 50%;
+            padding: 150px 0;
+            border-radius: 30px;
+
+            a {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .organics__post {
+        width: 50%;
+        padding: 150px 0;
+        border-radius: 30px;
+
+        a {
+            width: 80%;
+        }
+    }
+}

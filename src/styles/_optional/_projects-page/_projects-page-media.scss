@@ -1,0 +1,48 @@
+@media screen and (max-width: 1250.01px) {
+    .projects-page {
+        &__banner {
+            padding: 100px 0;
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        &__projects {
+            &__project {
+                width: 48%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .projects-page__projects__project {
+        h2 {
+            font-size: 1.25em;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .projects-page__projects {
+        justify-content: center;
+        text-align: center;
+
+        &__project {
+            width: 80%;
+
+            h2 {
+                font-size: 1.25em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+        }
+    }
+}

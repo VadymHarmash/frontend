@@ -4,7 +4,7 @@ export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:3333/orders' || process.env.REACT_APP_DB
+        const url = 'http://localhost:3333/orders' || process.env.REACT_APP_DB + '/orders'
 
         fetch(url)
             .then(response => response.json())

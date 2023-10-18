@@ -27,7 +27,7 @@ function App() {
   }, [totalCount])
 
   useEffect(() => {
-    const url = 'http://localhost:3333/products' || process.env.REACT_APP_DB
+    const url = 'http://localhost:3333/products' || process.env.REACT_APP_DB + '/products'
     dispatch(productsFetchData(url))
   }, [dispatch])
 

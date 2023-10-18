@@ -77,7 +77,7 @@ export default function OrderForm({ productsToBuy, totalCost, setIsOrderPlaced }
         }
 
         try {
-            await fetch('http://localhost:3333/orders' || process.env.REACT_APP_DB, {
+            await fetch('http://localhost:3333/orders' || process.env.REACT_APP_DB + '/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

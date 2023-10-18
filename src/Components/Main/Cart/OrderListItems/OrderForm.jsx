@@ -1,5 +1,4 @@
 import React from 'react'
-import ThanksPage from './ThanksPage';
 
 export default function OrderForm({ productsToBuy, totalCost, setIsOrderPlaced }) {
     const fields = [
@@ -78,7 +77,7 @@ export default function OrderForm({ productsToBuy, totalCost, setIsOrderPlaced }
         }
 
         try {
-            await fetch('http://localhost:3333/orders', {
+            await fetch('http://localhost:3333/orders' || process.env.REACT_APP_DB, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function OrganicPosts() {
     const postTitles = [
@@ -11,7 +12,7 @@ export default function OrganicPosts() {
         <div className="organics__wrapper">
             {postTitles.map((title, index) => (
                 <div className="organics__post" key={index}>
-                    <a href="#">{title}</a>
+                    <Link to='/'>{title}</Link>
                 </div>
             ))}
         </div>

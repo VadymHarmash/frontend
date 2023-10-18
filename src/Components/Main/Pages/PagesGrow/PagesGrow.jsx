@@ -2,6 +2,7 @@ import React from 'react'
 import PagesLeftList from './PagesLeftList'
 import PagesRightList from './PagesRightList'
 import pistachios from './../../../../assets/images/pages-pistachios.png'
+import { Link } from 'react-router-dom'
 
 export default function PagesGrow() {    
     return (
@@ -17,7 +18,7 @@ export default function PagesGrow() {
                         </div>
                         <PagesRightList />
                     </div>
-                    <a href="#">Explore More</a>
+                    <Link to='/'>Explore More</Link>
                 </div>
             </div>
         </div>

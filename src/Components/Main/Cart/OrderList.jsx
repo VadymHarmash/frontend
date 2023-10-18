@@ -5,7 +5,6 @@ import TotalPrice from './OrderListItems/TotalPrice'
 import OrderForm from './OrderListItems/OrderForm'
 
 export default function OrderList({ setIsOrderPlaced, updatedProductsArray, setUpdatedProductsArray, recountProducts }) {
-    const [totalPrice, setTotalPrice] = useState(0)
     const [totalDiscount, setTotalDiscount] = useState(0)
     const [totalCost, setTotalCost] = useState(0)
     const [showForm, setShowForm] = useState(false)
@@ -27,7 +26,6 @@ export default function OrderList({ setIsOrderPlaced, updatedProductsArray, setU
             priceWithoutDiscount += price
             totalDiscount += discount
         }
-        setTotalPrice(priceWithoutDiscount)
         setTotalDiscount(totalDiscount)
         totalCost = priceWithoutDiscount - totalDiscount
         setTotalCost(totalCost)

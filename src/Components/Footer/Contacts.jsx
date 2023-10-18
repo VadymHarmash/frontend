@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Logo from './../Header/Logo'
 import instagram from './../../assets/icons/instagram.svg'
 import facebook from './../../assets/icons/facebook.svg'
@@ -57,9 +58,9 @@ export default function Contacts() {
                         <ul>
                             {socialMedias.map((socialMedia, index) => (
                                 <li key={index}>
-                                    <a href="#">
+                                    <Link to='/'>
                                         <img src={socialMedia} alt={socialMedia} />
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -69,7 +70,7 @@ export default function Contacts() {
                         <ul>
                             {utilities.map((utility, index) => (
                                 <li key={index}>
-                                    <a href="#">{utility}</a>
+                                    <Link to=''>{utility}</Link>
                                 </li>
                             ))}
                         </ul>

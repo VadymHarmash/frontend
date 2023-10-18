@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function AboutMain() {
     return (
@@ -15,7 +16,7 @@ export default function AboutMain() {
                             <li>Modern Agriculture Equipment</li>
                             <li>No growth hormones are used</li>
                         </ul>
-                        <a href="#">Explore More</a>
+                        <Link to='/'>Explore Now</Link>
                     </div>
                 </div>
             </div>

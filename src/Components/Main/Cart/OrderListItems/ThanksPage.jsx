@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export default function ThanksPage({ setUpdatedProductsArray }) {
     useEffect(() => {
@@ -7,7 +7,7 @@ export default function ThanksPage({ setUpdatedProductsArray }) {
 
     useEffect(() => {
         setUpdatedProductsArray([])
-    }, [])
+    }, [setUpdatedProductsArray])
 
     return (
         <div className='thanks-page'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Banner() {
     return (
@@ -8,7 +9,7 @@ export default function Banner() {
                     <div className="banner__content">
                         <h3>100% Natural Food</h3>
                         <h1>Choose the best healthier way of life</h1>
-                        <a href="#">Explore Now</a>
+                        <Link to='/'>Explore Now</Link>
                     </div>
                 </div>
             </div>

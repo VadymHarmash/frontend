@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import NewsBanner from './NewsBanner'
-import News from '../Home/News'
 import Form from '../Home/Form'
 import NewsPosts from '../Home/Shared/NewsPosts'
 

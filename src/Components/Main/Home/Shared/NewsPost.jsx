@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function NewsPost({ post }) {
     return (
@@ -7,7 +8,7 @@ export default function NewsPost({ post }) {
                 <span>By {post.author}</span>
                 <h4>{post.title}</h4>
                 <p>{post.description}</p>
-                <a href="#">Read More</a>
+                <Link to='/'>Read More</Link>
             </div>
         </div>
     )

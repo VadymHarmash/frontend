@@ -9,12 +9,14 @@ import { productsFetchData } from './actions/products.js';
 
 function App() {
   const [totalCount, setTotalCount] = useState(0)
-  const [productsArray, setProductsArray] = useState([])
+  const productsArray = useState([])[0]
   const [updatedProductsArray, setUpdatedProductsArray] = useState(productsArray)
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products)
 
   useEffect(() => {
     setUpdatedProductsArray(productsArray)
-  }, [])
+  }, [productsArray])
 
   const total = totalCount
 
@@ -24,11 +26,8 @@ function App() {
     setTotalCount(totalCount)
   }, [totalCount])
 
-  const dispatch = useDispatch()
-  const products = useSelector(state => state.products)
-
   useEffect(() => {
-    const url = 'http://localhost:3333/products'
+    const url = 'http://localhost:3333/products' || process.env.REACT_APP_DB
     dispatch(productsFetchData(url))
   }, [dispatch])
 

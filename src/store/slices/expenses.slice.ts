@@ -12,21 +12,12 @@ const initialState: IExpensesSlice = {
   expenses: [],
   isLoading: false,
   error: null,
-  isAuth: false,
-  userEmail: null,
 };
 
 export const expensesSlice = createSlice({
   name: 'expenses',
   initialState,
-  reducers: {
-    setIsAuth: (state, action: PayloadAction<boolean>) => {
-      state.isAuth = action.payload;
-    },
-    setUserEmail: (state, action: PayloadAction<string>) => {
-      state.userEmail = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchExpenses.pending, state => {
@@ -99,5 +90,4 @@ export const expensesSlice = createSlice({
   },
 });
 
-export const { setIsAuth, setUserEmail } = expensesSlice.actions;
 export default expensesSlice.reducer;

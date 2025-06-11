@@ -14,7 +14,7 @@ export const fetchExpenses = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const state = getState() as RootState;
-      const userEmail = state.expenses.userEmail;
+      const userEmail = state.user.userEmail;
 
       if (!userEmail) {
         return rejectWithValue('User email not available.');
@@ -62,7 +62,7 @@ export const addExpense = createAsyncThunk(
   ) => {
     try {
       const state = getState() as RootState;
-      const userEmail = state.expenses.userEmail;
+      const userEmail = state.user.userEmail;
 
       if (!userEmail) {
         return rejectWithValue('User email not available.');
@@ -104,7 +104,7 @@ export const updateExpense = createAsyncThunk(
   async (expenseData: IExpense, { rejectWithValue, getState }) => {
     try {
       const state = getState() as RootState;
-      const userEmail = state.expenses.userEmail;
+      const userEmail = state.user.userEmail;
 
       if (!userEmail) {
         return rejectWithValue('User email not available.');
@@ -138,7 +138,7 @@ export const deleteExpense = createAsyncThunk(
   async (expenseId: string, { rejectWithValue, getState }) => {
     try {
       const state = getState() as RootState;
-      const userEmail = state.expenses.userEmail;
+      const userEmail = state.user.userEmail;
 
       if (!userEmail) {
         return rejectWithValue('User email not available.');

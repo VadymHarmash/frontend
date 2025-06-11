@@ -12,7 +12,7 @@ import { useState } from 'react';
 import { styles } from './styles/LoginFormStyles.ts';
 import auth from '@react-native-firebase/auth';
 import { useAppDispatch } from '../../store';
-import { setIsAuth, setUserEmail } from '../../store/slices/expenses.slice.ts'; // Додаємо setUserEmail
+import { setIsAuth, setUserEmail } from '../../store/slices/user.slice.ts';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { IRootStackParamList } from '../../types/IRootStackParamList.ts';

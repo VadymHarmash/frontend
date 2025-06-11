@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import expensesReducer from './slices/expenses.slice.ts';
+import userReducer from './slices/user.slice.ts';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const rootReducer = combineReducers({
   expenses: expensesReducer,
+  user: userReducer,
 });
 
 export const store = configureStore({

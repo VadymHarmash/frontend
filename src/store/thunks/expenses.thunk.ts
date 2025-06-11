@@ -72,6 +72,7 @@ export const addExpense = createAsyncThunk(
 
       const newDocRef = await firestore().collection('expenses').add({
         title: expenseData.title,
+        currency: expenseData.currency,
         amount: expenseData.amount,
         category: expenseData.category,
         date: dateString,
@@ -111,6 +112,7 @@ export const updateExpense = createAsyncThunk(
 
       await firestore().collection('expenses').doc(expenseData.id).update({
         title: expenseData.title,
+        currency: expenseData.currency,
         amount: expenseData.amount,
         category: expenseData.category,
         date: expenseData.date,

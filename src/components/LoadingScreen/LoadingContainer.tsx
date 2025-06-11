@@ -9,6 +9,7 @@ import auth from '@react-native-firebase/auth';
 import { setIsAuth, setUserEmail } from '../../store/slices/user.slice.ts';
 import { getColors } from '../../constants/colors.ts';
 import { IThemeColors } from '../../types/IThemeColors.ts';
+import { loadTheme } from '../../store/thunks/theme.thunk.ts';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   IRootStackParamList,
@@ -23,6 +24,8 @@ const LoadingContainer = () => {
   const styles = getThemedStyles(currentColors);
 
   useEffect(() => {
+    dispatch(loadTheme());
+
     const subscriber = auth().onAuthStateChanged(user => {
       if (user) {
         dispatch(setIsAuth(true));

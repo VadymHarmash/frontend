@@ -1,5 +1,3 @@
-// import { Category } from './enums/Category.ts';
-
 export interface IExpense {
   id: string;
   userEmail: string;

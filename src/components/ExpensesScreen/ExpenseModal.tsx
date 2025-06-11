@@ -10,9 +10,11 @@ import {
   View,
 } from 'react-native';
 import { IExpense } from '../../types/IExpense.ts';
-import { styles } from './styles/ExpenseModalStyles.ts';
+import { getThemedStyles } from './styles/ExpenseModalStyles.ts';
 import { useAppSelector } from '../../store';
 import { formatDateToString } from '../../helpers/formatDateToString.ts';
+import { getColors } from '../../constants/colors.ts';
+import { IThemeColors } from '../../types/IThemeColors.ts';
 
 interface ExpenseModalProps {
   visible: boolean;
@@ -31,14 +33,17 @@ const ExpenseModal: React.FC<ExpenseModalProps> = ({
   const [amount, setAmount] = useState<string>('');
   const [category, setCategory] = useState<string>('');
   const [currency, setCurrency] = useState<string>('UAH');
-  const { userEmail } = useAppSelector(state => state.expenses);
+  const { userEmail } = useAppSelector(state => state.user);
+  const { theme } = useAppSelector(state => state.theme);
+  const currentColors: IThemeColors = getColors(theme);
+  const styles = getThemedStyles(currentColors);
 
   useEffect(() => {
     if (expenseToEdit) {
       setTitle(expenseToEdit.title);
       setAmount(expenseToEdit.amount.toString());
       setCategory(expenseToEdit.category);
-      setCurrency((expenseToEdit as any).currency || 'UAH');
+      setCurrency(expenseToEdit.currency || 'UAH');
     } else {
       setTitle('');
       setAmount('');
@@ -93,6 +98,7 @@ const ExpenseModal: React.FC<ExpenseModalProps> = ({
             <TextInput
               style={styles.input}
               placeholder="Title"
+              placeholderTextColor={currentColors.textSecondary}
               value={title}
               onChangeText={setTitle}
             />
@@ -102,6 +108,7 @@ const ExpenseModal: React.FC<ExpenseModalProps> = ({
             <TextInput
               style={styles.input}
               placeholder="Category"
+              placeholderTextColor={currentColors.textSecondary}
               value={category}
               onChangeText={setCategory}
             />
@@ -111,6 +118,7 @@ const ExpenseModal: React.FC<ExpenseModalProps> = ({
             <TextInput
               style={styles.input}
               placeholder="Amount"
+              placeholderTextColor={currentColors.textSecondary}
               keyboardType="numeric"
               value={amount}
               onChangeText={setAmount}

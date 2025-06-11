@@ -1,7 +1,10 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import React, { FC } from 'react';
 import { IExpense } from '../../types/IExpense.ts';
-import { styles } from './styles/ExpenseItemStyles.ts';
+import { getThemedStyles } from './styles/ExpenseItemStyles.ts';
+import { useAppSelector } from '../../store';
+import { getColors } from '../../constants/colors.ts';
+import { IThemeColors } from '../../types/IThemeColors.ts';
 
 type ExpenseItemProps = {
   expense: IExpense;
@@ -10,6 +13,10 @@ type ExpenseItemProps = {
 };
 
 const ExpenseItem: FC<ExpenseItemProps> = ({ expense, onEdit, onDelete }) => {
+  const { theme } = useAppSelector(state => state.theme);
+  const currentColors: IThemeColors = getColors(theme);
+  const styles = getThemedStyles(currentColors);
+
   return (
     <View style={styles.expenseItem}>
       <View style={styles.expenseDetails}>

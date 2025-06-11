@@ -9,13 +9,15 @@ import {
   Alert,
 } from 'react-native';
 import { useState } from 'react';
-import { styles } from './styles/LoginFormStyles.ts';
+import { getThemedStyles } from './styles/LoginFormStyles.ts';
 import auth from '@react-native-firebase/auth';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch, useAppSelector } from '../../store';
 import { setIsAuth, setUserEmail } from '../../store/slices/user.slice.ts';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { IRootStackParamList } from '../../types/IRootStackParamList.ts';
+import ThemeController from '../UI/ThemeController.tsx';
+import { getColors } from '../../constants/colors.ts';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   IRootStackParamList,
@@ -27,6 +29,9 @@ const LoginForm = () => {
   const [password, setPassword] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const dispatch = useAppDispatch();
+  const { theme } = useAppSelector(state => state.theme);
+  const currentColors = getColors(theme);
+  const styles = getThemedStyles(currentColors);
 
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
@@ -109,6 +114,7 @@ const LoginForm = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ThemeController />
       <KeyboardAvoidingView
         style={styles.keyboardContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
@@ -117,6 +123,7 @@ const LoginForm = () => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor={currentColors.textSecondary}
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
@@ -127,6 +134,7 @@ const LoginForm = () => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor={currentColors.textSecondary}
           secureTextEntry
           value={password}
           onChangeText={setPassword}
@@ -134,7 +142,7 @@ const LoginForm = () => {
         />
 
         {loading ? (
-          <ActivityIndicator size="large" color="#007AFF" />
+          <ActivityIndicator size="large" color={currentColors.primary} />
         ) : (
           <>
             <TouchableOpacity

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { IExpense } from '../../types/IExpense.ts';
-import { styles } from './styles/ExpensesListStyles.ts';
+import { getThemedStyles } from './styles/ExpensesListStyles.ts';
 import ExpenseItem from './ExpenseItem.tsx';
 import ExpenseModal from './ExpenseModal.tsx';
 import { RootState, useAppDispatch, useAppSelector } from '../../store';
@@ -19,12 +19,17 @@ import {
   fetchExpenses,
   updateExpense,
 } from '../../store/thunks/expenses.thunk.ts';
+import { getColors } from '../../constants/colors.ts';
+import { IThemeColors } from '../../types/IThemeColors.ts';
 
 const ExpensesList = () => {
   const dispatch = useAppDispatch();
   const { expenses, isLoading, error } = useAppSelector(
     (state: RootState) => state.expenses,
   );
+  const { theme } = useAppSelector(state => state.theme);
+  const currentColors: IThemeColors = getColors(theme);
+  const styles = getThemedStyles(currentColors);
 
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [currentExpense, setCurrentExpense] = useState<IExpense | null>(null);
@@ -96,8 +101,10 @@ const ExpensesList = () => {
 
       {isLoading && (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#0000ff" />
-          <Text>Loading expenses...</Text>
+          <ActivityIndicator size="large" color={currentColors.primary} />
+          <Text style={{ color: currentColors.textPrimary }}>
+            Loading expenses...
+          </Text>
         </View>
       )}
 

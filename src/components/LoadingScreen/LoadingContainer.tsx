@@ -1,13 +1,14 @@
 import { Text, View } from 'react-native';
-import { styles } from './styles/LoadingContainerStyles.ts';
-
+import { getThemedStyles } from './styles/LoadingContainerStyles.ts';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
-import { store } from '../../store';
+import { useAppDispatch, useAppSelector } from '../../store';
 import { IRootStackParamList } from '../../types/IRootStackParamList.ts';
 import auth from '@react-native-firebase/auth';
 import { setIsAuth, setUserEmail } from '../../store/slices/user.slice.ts';
+import { getColors } from '../../constants/colors.ts';
+import { IThemeColors } from '../../types/IThemeColors.ts';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   IRootStackParamList,
@@ -16,7 +17,10 @@ type LoginScreenNavigationProp = NativeStackNavigationProp<
 
 const LoadingContainer = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
-  const dispatch = store.dispatch;
+  const dispatch = useAppDispatch();
+  const { theme } = useAppSelector(state => state.theme);
+  const currentColors: IThemeColors = getColors(theme);
+  const styles = getThemedStyles(currentColors);
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(user => {
@@ -31,11 +35,11 @@ const LoadingContainer = () => {
     });
 
     return subscriber;
-  }, []);
+  }, [dispatch, navigation]);
 
   return (
     <View style={styles.container}>
-      <Text>Loading...</Text>
+      <Text style={styles.text}>Loading...</Text>
     </View>
   );
 };

@@ -1,12 +1,5 @@
 import { IUserSlice } from '../../types/slices/IUserSlice.ts';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {
-  addExpense,
-  deleteExpense,
-  fetchExpenses,
-  updateExpense,
-} from '../thunks/expenses.thunk.ts';
-import { IExpense } from '../../types/IExpense.ts';
 
 const initialState: IUserSlice = {
   isLoading: false,

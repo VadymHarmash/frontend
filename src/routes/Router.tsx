@@ -1,8 +1,8 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoadingScreen from "../screens/LoadingScreen.tsx";
-import LoginScreen from "../screens/LoginScreen.tsx";
-import ExpensesScreen from "../screens/ExpensesScreen.tsx";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoadingScreen from '../screens/LoadingScreen.tsx';
+import LoginScreen from '../screens/LoginScreen.tsx';
+import ExpensesScreen from '../screens/ExpensesScreen.tsx';
 const Stack = createNativeStackNavigator();
 
 function Router() {

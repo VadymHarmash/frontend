@@ -1,52 +1,103 @@
-import { createAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IExpensesSlice } from "../../types/slices/IExpensesSlice.ts";
-// import { IExpensesSlice } from "@/interfaces/slice/Expenses.slice.interface";
-// import {
-//     fetchExpensesByCity,
-//     fetchExpensesForecastByCity,
-// } from "@/store/thunks/Expenses.thunk";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IExpensesSlice } from '../../types/slices/IExpensesSlice.ts';
+import {
+  addExpense,
+  deleteExpense,
+  fetchExpenses,
+  updateExpense,
+} from '../thunks/expenses.thunk.ts';
+import { IExpense } from '../../types/IExpense.ts';
 
 const initialState: IExpensesSlice = {
+  expenses: [],
+  isLoading: false,
+  error: null,
   isAuth: false,
+  userEmail: null,
 };
 
-export const resetExpensesState = createAction("expenses/resetState");
-
 export const expensesSlice = createSlice({
-  name: "expenses",
+  name: 'expenses',
   initialState,
   reducers: {
     setIsAuth: (state, action: PayloadAction<boolean>) => {
       state.isAuth = action.payload;
     },
+    setUserEmail: (state, action: PayloadAction<string>) => {
+      state.userEmail = action.payload;
+    },
   },
   extraReducers: builder => {
-    builder;
-    // .addCase(fetchExpensesByCity.pending, state => {
-    //   state.error = "";
-    // })
-    // .addCase(fetchExpensesByCity.fulfilled, (state, action) => {
-    //   state.ExpensesData = action.payload;
-    //   state.error = "";
-    // })
-    // .addCase(fetchExpensesByCity.rejected, (state, action) => {
-    //   state.error = action.payload as string;
-    // })
-    // .addCase(resetExpensesState, state => {
-    //   return { ...initialState };
-    // })
-    // .addCase(fetchExpensesForecastByCity.pending, state => {
-    //   state.error = "";
-    // })
-    // .addCase(fetchExpensesForecastByCity.fulfilled, (state, action) => {
-    //   state.forecast = action.payload;
-    //   state.error = "";
-    // })
-    // .addCase(fetchExpensesForecastByCity.rejected, (state, action) => {
-    //   state.error = action.payload as string;
-    // });
+    builder
+      .addCase(fetchExpenses.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(
+        fetchExpenses.fulfilled,
+        (state, action: PayloadAction<IExpense[]>) => {
+          state.isLoading = false;
+          state.expenses = action.payload;
+        },
+      )
+      .addCase(fetchExpenses.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(addExpense.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(
+        addExpense.fulfilled,
+        (state, action: PayloadAction<IExpense>) => {
+          state.isLoading = false;
+          state.expenses.unshift(action.payload);
+        },
+      )
+      .addCase(addExpense.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(updateExpense.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(
+        updateExpense.fulfilled,
+        (state, action: PayloadAction<IExpense>) => {
+          state.isLoading = false;
+          const index = state.expenses.findIndex(
+            exp => exp.id === action.payload.id,
+          );
+          if (index !== -1) {
+            state.expenses[index] = action.payload;
+          }
+        },
+      )
+      .addCase(updateExpense.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(deleteExpense.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(
+        deleteExpense.fulfilled,
+        (state, action: PayloadAction<string>) => {
+          state.isLoading = false;
+          state.expenses = state.expenses.filter(
+            exp => exp.id !== action.payload,
+          );
+        },
+      )
+      .addCase(deleteExpense.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      });
   },
 });
 
-export const { setIsAuth } = expensesSlice.actions;
+export const { setIsAuth, setUserEmail } = expensesSlice.actions;
 export default expensesSlice.reducer;

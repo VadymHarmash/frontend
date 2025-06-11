@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
-import LoadingContainer from "../components/LoadingScreen/LoadingContainer.tsx";
+import { SafeAreaView } from 'react-native';
+import ExpensesContainer from '../components/ExpensesScreen/ExpensesContainer.tsx';
 
 const ExpensesScreen = () => {
   return (
-    <View>
-      <Text>Expenses</Text>
-    </View>
+    <SafeAreaView>
+      <ExpensesContainer />
+    </SafeAreaView>
   );
 };
 

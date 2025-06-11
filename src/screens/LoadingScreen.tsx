@@ -1,4 +1,4 @@
-import LoadingContainer from "../components/LoadingScreen/LoadingContainer.tsx";
+import LoadingContainer from '../components/LoadingScreen/LoadingContainer.tsx';
 
 const LoadingScreen = () => {
   return <LoadingContainer />;

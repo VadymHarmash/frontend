@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginScreen/LoginForm.tsx";
+import LoginForm from '../components/LoginScreen/LoginForm.tsx';
 
 const LoginScreen = () => {
   return <LoginForm />;

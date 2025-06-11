@@ -1,17 +1,17 @@
-import { Text, View } from "react-native";
-import { styles } from "./styles/LoadingContainerStyles.ts";
+import { Text, View } from 'react-native';
+import { styles } from './styles/LoadingContainerStyles.ts';
 
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useNavigation } from "@react-navigation/native";
-import { useEffect } from "react";
-import { store, useAppSelector } from "../../store";
-import { IRootStackParamList } from "../../types/IRootStackParamList.ts";
-import auth from "@react-native-firebase/auth";
-import { setIsAuth } from "../../store/slices/expenses.slice.ts";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import { useEffect } from 'react';
+import { store, useAppSelector } from '../../store';
+import { IRootStackParamList } from '../../types/IRootStackParamList.ts';
+import auth from '@react-native-firebase/auth';
+import { setIsAuth, setUserEmail } from '../../store/slices/expenses.slice.ts';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   IRootStackParamList,
-  "Login"
+  'Login'
 >;
 
 const LoadingContainer = () => {
@@ -21,13 +21,12 @@ const LoadingContainer = () => {
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(user => {
       if (user) {
-        console.log("Firebase: User is signed in", user.uid);
         dispatch(setIsAuth(true));
-        navigation.navigate("Expenses");
+        user.email && dispatch(setUserEmail(user.email));
+        navigation.navigate('Expenses');
       } else {
-        console.log("Firebase: User is signed out");
         dispatch(setIsAuth(false));
-        navigation.navigate("Login");
+        navigation.navigate('Login');
       }
     });
 
